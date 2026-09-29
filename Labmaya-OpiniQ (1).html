@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><title>Labmaya-OpiniQ</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--ink:#12263a;--em:#0f7b6c;--sand:#f4ecd8;--amb:#e0a526;--cor:#d9534f;--w:#fffdf7;--mut:#5b6b78}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden;background:#0b1a28;font-family:Georgia,'Times New Roman',serif}
+#st{position:absolute;left:50%;top:50%;width:1920px;height:1000px;transform-origin:0 0;background:var(--sand);display:flex;flex-direction:column;overflow:hidden}
+header{height:74px;background:var(--ink);color:var(--sand);display:flex;align-items:center;padding:0 28px;gap:18px}
+header h1{font-size:34px;letter-spacing:.5px}header h1 b{color:var(--amb)}
+header small{font-size:16px;opacity:.75;font-family:system-ui,sans-serif}
+nav{display:flex;gap:6px;margin-left:auto}
+button{font-family:system-ui,sans-serif;cursor:pointer;border:0;border-radius:10px;font-size:18px;padding:10px 18px;background:#e2d6b8;color:var(--ink);transition:transform .1s}
+button:active{transform:scale(.95)}
+nav button{background:transparent;color:var(--sand);border-bottom:3px solid transparent;border-radius:0;font-size:20px}
+nav button.on{border-color:var(--amb);color:var(--amb)}
+.pri{background:var(--em);color:#fff}.war{background:var(--amb)}.red{background:var(--cor);color:#fff}
+main{flex:1;padding:22px 32px;position:relative;font-family:system-ui,sans-serif;color:var(--ink)}
+.pg{display:none;height:100%}.pg.on{display:flex;gap:22px}
+.card{background:var(--w);border-radius:16px;padding:20px;box-shadow:0 2px 0 #cbbf9f;flex:1;min-width:0}
+h2{font-family:Georgia,serif;font-size:30px;margin-bottom:8px}h3{font-family:Georgia,serif;font-size:24px;margin-bottom:6px}
+p,li{font-size:19px;line-height:1.5}
+.ic{cursor:pointer;text-align:center}.ic svg{width:100%;height:190px}
+.tag{display:inline-block;padding:2px 10px;border-radius:20px;color:#fff;font-size:15px}
+.pai{background:var(--em);color:#f4fff9;border-radius:16px;padding:16px 22px}
+.pai p{color:#f4fff9}
+.step{display:flex;gap:14px;align-items:center;padding:14px;border-radius:12px;background:#f0e6cc;margin-bottom:12px;cursor:pointer;border-left:8px solid #ccc}
+.step.done{border-color:var(--em);background:#d8f0e8}
+.step .n{font:700 26px Georgia;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--amb);display:grid;place-items:center;flex:none}
+.chip{display:block;width:100%;text-align:left;margin-bottom:10px;background:#f0e6cc;border:3px solid transparent}
+.chip.on{border-color:var(--em);background:#d8f0e8}.chip.bad.on{border-color:var(--cor);background:#fbdcda}
+.meter{height:34px;background:#e2d6b8;border-radius:20px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--em);transition:width .5s,background .5s}
+.q{margin-bottom:10px}.q b{font-size:18px}.q label{display:block;font-size:17px;padding:2px 0;cursor:pointer}
+textarea,input[type=text]{width:100%;font:18px system-ui;padding:10px;border:2px solid #cbbf9f;border-radius:10px;background:#fff}
+.big{font:700 34px Georgia}.gc{font:600 30px/1.4 Georgia;text-align:center;padding:28px;background:var(--ink);color:var(--sand);border-radius:16px;min-height:170px;display:grid;place-items:center}
+.row{display:flex;gap:12px;align-items:center}
+#mute{position:absolute;right:18px;bottom:14px}
+.fb{font-size:20px;min-height:30px;font-weight:600}
+</style></head><body>
+<div id="st">
+<header><svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="23" r="21" fill="#e0a526"/><path d="M12 30l6-14h4l6 14M15 26h10" stroke="#12263a" stroke-width="3" fill="none"/><path d="M30 14h6v10h-6z" fill="#0f7b6c"/></svg>
+<h1>Labmaya-<b>OpiniQ</b></h1><small>Lab maya Teks Argumentasi &amp; Opini · Fase F · Bahasa Indonesia + PAI</small>
+<nav id="nav"></nav></header>
+<main>
+<!-- TEORI -->
+<section class="pg on" id="p0" style="flex-direction:column">
+<div style="display:flex;gap:22px;flex:1">
+<div class="card ic" onclick="say('f')"><svg viewBox="0 0 200 190"><rect x="20" y="110" width="26" height="60" fill="#0f7b6c"/><rect x="58" y="80" width="26" height="90" fill="#e0a526"/><rect x="96" y="50" width="26" height="120" fill="#12263a"/><circle cx="150" cy="60" r="26" fill="none" stroke="#12263a" stroke-width="7"/><path d="M168 80l24 26" stroke="#12263a" stroke-width="9"/></svg>
+<h3>Fakta <span class="tag" style="background:var(--em)">dapat dibuktikan</span></h3><p style="text-align:left">Informasi yang benar-benar terjadi dan bisa diperiksa lewat data, dokumen, atau pengamatan. Contoh: “Salat wajib berjumlah lima waktu.”</p><button class="pri" style="margin-top:10px">🔊 Dengarkan</button></div>
+<div class="card ic" onclick="say('o')"><svg viewBox="0 0 200 190"><path d="M30 30h140a14 14 0 0114 14v70a14 14 0 01-14 14H90l-36 30v-30H30a14 14 0 01-14-14V44a14 14 0 0114-14z" fill="#d9534f"/><text x="100" y="108" font-size="72" text-anchor="middle" fill="#fff" font-family="Georgia">?!</text></svg>
+<h3>Opini <span class="tag" style="background:var(--cor)">pandangan pribadi</span></h3><p style="text-align:left">Pendapat, penilaian, atau perasaan penulis. Ditandai kata seperti <i>menurut saya, sebaiknya, indah, terbaik</i>. Contoh: “Ramadan adalah bulan terindah.”</p><button class="red" style="margin-top:10px">🔊 Dengarkan</button></div>
+<div class="card ic" onclick="say('a')"><svg viewBox="0 0 200 190"><path d="M100 30v130M60 165h80" stroke="#12263a" stroke-width="8"/><path d="M30 60h140" stroke="#12263a" stroke-width="7"/><path d="M30 60l-18 50h36zM170 60l-18 50h36z" fill="#e0a526"/><circle cx="100" cy="28" r="9" fill="#0f7b6c"/></svg>
+<h3>Argumentasi <span class="tag" style="background:var(--ink)">opini + bukti</span></h3><p style="text-align:left">Teks yang meyakinkan pembaca dengan alasan logis, data, fakta, dan rujukan. Opini menjadi kuat bila ditopang bukti.</p><button style="margin-top:10px;background:var(--ink);color:#fff">🔊 Dengarkan</button></div>
+<div class="card" style="flex:1.15"><h3>Struktur teks argumentasi</h3>
+<div class="step" onclick="say('t')" style="border-color:var(--amb)"><div class="n">T</div><div><b>Tesis</b><br>Pernyataan pendirian penulis.</div></div>
+<div class="step" onclick="say('r')" style="border-color:var(--em)"><div class="n">A</div><div><b>Rangkaian argumen</b><br>Alasan, data, fakta, dan pendapat ahli.</div></div>
+<div class="step" onclick="say('p')" style="border-color:var(--cor)"><div class="n">P</div><div><b>Penegasan ulang</b><br>Simpulan yang menguatkan tesis.</div></div>
+<p><b>Ciri bahasa:</b> konjungsi kausal (karena, sebab, oleh karena itu), kata teknis, kalimat berdasarkan data.</p></div></div>
+<div class="pai"><div class="row"><span style="font-size:44px">📖</span><div><h3 style="color:var(--amb)">Integrasi PAI: Berpendapat dengan hikmah &amp; tabayyun</h3>
+<p>QS. An-Nahl [16]:125 mengajarkan berdakwah dan berdiskusi dengan hikmah serta cara yang baik. QS. Al-Hujurat [49]:6 mengajarkan tabayyun, yaitu memeriksa kebenaran kabar sebelum menyebarkannya. Argumentasi yang baik = jujur, berbukti, santun.</p></div><button class="war" onclick="say('i')">🔊</button></div></div>
+</section>
+<!-- PROSEDUR -->
+<section class="pg" id="p1"><div class="card" style="flex:1.2"><h2>Prosedur praktikum (klik tiap langkah saat selesai)</h2><div id="steps"></div><button class="red" onclick="resetSteps()">↺ Reset langkah</button></div>
+<div class="card" style="flex:.8"><h2>Alat &amp; bahan maya</h2><ul style="padding-left:24px"><li>Tab Simulasi: Pembangun Argumen</li><li>Tab LKPD: soal &amp; paragraf argumentasi</li><li>Tab Game: Fakta atau Opini</li><li>Perangkat dengan suara aktif</li></ul>
+<h3 style="margin-top:20px">Tujuan Pembelajaran</h3><ul style="padding-left:24px"><li>Membedakan fakta dan opini</li><li>Menyusun argumen yang logis</li><li>Menyampaikan pendapat santun sesuai nilai Islam</li></ul>
+<div style="margin-top:20px;font-size:90px;text-align:center">🧪📚🕌</div><div class="meter"><i id="pbar"></i></div><p id="ptxt" style="text-align:center"></p></div></section>
+<!-- SIMULASI -->
+<section class="pg" id="p2"><div class="card"><h2>Pembangun Argumen</h2><p style="margin-bottom:10px"><b>Isu:</b> “Siswa perlu bertabayyun sebelum membagikan berita.” Pilih tesis, lalu pilih bukti.</p>
+<div id="tes"></div><h3 style="margin-top:8px">Pilih bukti &amp; alasan</h3><div id="chips"></div></div>
+<div class="card" style="flex:.9"><h2>Kekuatan argumen</h2><div class="meter"><i id="mt"></i></div><p class="big" id="mv" style="margin:8px 0">0%</p><p id="mj" class="fb"></p>
+<h3 style="margin-top:14px">Pratinjau paragraf</h3><div id="prev" style="background:#f0e6cc;border-radius:12px;padding:16px;min-height:260px;font:19px/1.6 Georgia"></div><button class="red" style="margin-top:14px" onclick="resetSim()">↺ Reset simulasi</button></div></section>
+<!-- LKPD -->
+<section class="pg" id="p3"><div class="card" style="flex:1.1"><h2>LKPD Teks Argumentasi &amp; Opini</h2><input type="text" id="nm" placeholder="Nama siswa / kelas" style="margin-bottom:12px"><div id="qs"></div>
+<div class="row"><button class="pri" onclick="cek()">✔ Periksa jawaban</button><button class="red" onclick="resetLk()">↺ Reset</button><b id="sk" class="fb"></b></div></div>
+<div class="card" style="flex:.9"><h3>Tugas paragraf</h3><p style="margin-bottom:8px">Tulis satu paragraf argumentasi (tesis, minimal dua alasan, penegasan) tentang: <i>“Menjaga lisan dan jari di media sosial adalah bagian dari akhlak mulia.”</i></p><textarea id="es" rows="13" oninput="wc()" placeholder="Tulis di sini..."></textarea><p id="wc" class="fb"></p><button class="war" onclick="window.print()">🖨 Cetak LKPD</button></div></section>
+<!-- GAME -->
+<section class="pg" id="p4" style="flex-direction:column;align-items:center"><div class="card" style="flex:none;width:1100px;text-align:center"><h2>Game: Fakta atau Opini?</h2>
+<div class="row" style="justify-content:center;font-size:24px;margin-bottom:12px"><span>Skor: <b id="gs">0</b></span><span>Nyawa: <b id="gl">❤❤❤</b></span><span>Runtun: <b id="gk">0</b></span><span>⏱ <b id="gt">15</b></span></div>
+<div class="gc" id="gq">Tekan Mulai</div><div class="row" style="justify-content:center;margin:18px 0"><button class="pri" style="font-size:28px;padding:16px 50px" onclick="ans('F')">✅ FAKTA</button><button class="red" style="font-size:28px;padding:16px 50px" onclick="ans('O')">💭 OPINI</button></div>
+<p class="fb" id="gf"></p><div class="row" style="justify-content:center"><button class="war" onclick="startG()">▶ Mulai / Ulangi</button><button class="red" onclick="resetG()">↺ Reset</button></div></div></section>
+<!-- PENGEMBANG -->
+<section class="pg" id="p5"><div class="card"><h2>Pengembang</h2><div style="font-size:90px">👩‍🏫💻</div><p><b>Aplikasi:</b> Labmaya-OpiniQ v1.0</p><p><b>Mata pelajaran:</b> Bahasa Indonesia (Fase F, Kelas XI–XII) terintegrasi PAI</p><p><b>Pengembang:</b> <span contenteditable="true" style="border-bottom:2px dashed var(--amb)">Ketik nama pengembang / sekolah</span></p><p><b>Teknologi:</b> HTML5, CSS, JavaScript, Web Audio, Web Speech</p>
+<div class="row" style="margin-top:20px"><button class="pri" style="font-size:22px" onclick="dl()">⬇ Unduh aplikasi (.html)</button></div><p style="margin-top:10px;font-size:16px;color:var(--mut)">File yang diunduh berjalan offline di peramban apa pun.</p></div>
+<div class="card"><h3>Petunjuk penggunaan</h3><ul style="padding-left:24px"><li>Klik kartu bergambar untuk mendengar penjelasan.</li><li>Ikuti tab dari kiri ke kanan.</li><li>Tombol ↺ mengatur ulang tiap kegiatan.</li><li>Tombol 🔊 di pojok kanan bawah mengatur suara.</li></ul><h3 style="margin-top:16px">Doa belajar</h3><p>“Rabbi zidni ilma, warzuqni fahma.” Ya Tuhanku, tambahkanlah ilmu dan berilah aku pemahaman.</p></div></section>
+<button id="mute" onclick="tgl()">🔊 Suara: hidup</button>
+</main></div>
+<script>
+const $=s=>document.querySelector(s),T=['📘 Teori','🧭 Prosedur','⚗ Simulasi','📝 LKPD','🎮 Game','👤 Pengembang'];
+let snd=true,AC;function fit(){const s=Math.min(innerWidth/1920,innerHeight/1000),e=$('#st');e.style.transform=`scale(${s})`;e.style.marginLeft=-960*s+'px';e.style.marginTop=-500*s+'px';e.style.left='50%';e.style.top='50%'}
+onresize=fit;fit();
+function bp(f,d,t='sine',v=.12,dl=0){if(!snd)return;AC=AC||new(window.AudioContext||webkitAudioContext)();const o=AC.createOscillator(),g=AC.createGain();o.type=t;o.frequency.value=f;o.connect(g);g.connect(AC.destination);const s=AC.currentTime+dl;g.gain.setValueAtTime(v,s);g.gain.exponentialRampToValueAtTime(.001,s+d);o.start(s);o.stop(s+d)}
+const S={click:()=>bp(660,.08),ok:()=>{bp(523,.12);bp(784,.2,'sine',.12,.1)},bad:()=>{bp(200,.3,'sawtooth',.08)},win:()=>[523,659,784,1047].forEach((f,i)=>bp(f,.2,'triangle',.12,i*.12))};
+function tgl(){snd=!snd;if(!snd)speechSynthesis.cancel();$('#mute').textContent=snd?'🔊 Suara: hidup':'🔇 Suara: mati'}
+function speak(t){S.click();if(snd&&window.speechSynthesis){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='id-ID';speechSynthesis.speak(u)}}
+const TX={f:'Fakta adalah informasi yang benar dan dapat dibuktikan melalui data, dokumen, atau pengamatan.',o:'Opini adalah pendapat atau penilaian pribadi. Kata seperti menurut saya dan sebaiknya sering menandainya.',a:'Argumentasi menyampaikan pendapat yang ditopang alasan logis, data, dan fakta, sehingga meyakinkan pembaca.',t:'Tesis adalah pernyataan pendirian penulis tentang suatu isu.',r:'Rangkaian argumen berisi alasan, data, fakta, dan pendapat ahli yang menguatkan tesis.',p:'Penegasan ulang adalah simpulan yang menguatkan kembali tesis.',i:'Islam mengajarkan berpendapat dengan hikmah, dan memeriksa kabar sebelum menyebarkannya, yang disebut tabayyun.'};
+function say(k){speak(TX[k])}
+$('#nav').innerHTML=T.map((t,i)=>`<button onclick="tab(${i})">${t}</button>`).join('');
+function tab(i){S.click();document.querySelectorAll('.pg').forEach((e,j)=>e.classList.toggle('on',i==j));document.querySelectorAll('nav button').forEach((e,j)=>e.classList.toggle('on',i==j))}
+tab(0);
+// Prosedur
+const ST=['Baca tab Teori: bedakan fakta, opini, dan argumen.','Buka Simulasi dan pilih tesis yang jelas.','Pilih bukti kuat (data, ahli, dalil), hindari serangan pribadi.','Capai kekuatan argumen minimal 70%.','Kerjakan LKPD dan tulis paragraf argumentasi.','Uji diri lewat Game Fakta atau Opini.'];
+let dn=[];function rs(){$('#steps').innerHTML=ST.map((s,i)=>`<div class="step ${dn[i]?'done':''}" onclick="ts(${i})"><div class="n">${dn[i]?'✓':i+1}</div><span style="font-size:20px">${s}</span></div>`).join('');const c=dn.filter(x=>x).length;$('#pbar').style.width=c/ST.length*100+'%';$('#ptxt').textContent=c+' dari '+ST.length+' langkah selesai'}
+function ts(i){dn[i]=!dn[i];dn[i]?S.ok():S.click();rs();if(dn.filter(x=>x).length==ST.length)S.win()}function resetSteps(){dn=[];S.click();rs()}rs();
+// Simulasi
+const TE=[['Siswa wajib bertabayyun sebelum membagikan berita, karena kabar yang belum diperiksa dapat merugikan orang lain.',20],['Berita itu ya begitu.',0],['Semua orang pasti salah.',-10]];
+const CH=[['Survei: 6 dari 10 remaja membagikan berita tanpa membaca isinya (data).',20,'Data menunjukkan enam dari sepuluh remaja membagikan berita tanpa membaca isinya.'],['Pakar literasi digital menganjurkan memeriksa sumber (ahli).',15,'Pakar literasi digital menganjurkan pemeriksaan sumber.'],['QS. Al-Hujurat:6 memerintahkan memeriksa kabar (dalil).',20,'QS. Al-Hujurat:6 memerintahkan kita memeriksa kabar sebelum bertindak.'],['Hoaks bencana membuat warga panik (contoh).',15,'Hoaks bencana pernah membuat warga panik.'],['Pokoknya semua berita online bohong (opini tanpa dasar).',-20,'Pokoknya semua berita online bohong.'],['Yang berbeda pendapat pasti bodoh (serangan pribadi).',-25,'Yang berbeda pendapat pasti bodoh.']];
+let tsel=-1,csel=[];function rsim(){$('#tes').innerHTML=TE.map((t,i)=>`<button class="chip ${tsel==i?'on':''} ${t[1]<=0?'bad':''}" onclick="pt(${i})"><b>Tesis:</b> ${t[0]}</button>`).join('');$('#chips').innerHTML=CH.map((c,i)=>`<button class="chip ${c[1]<0?'bad':''} ${csel.includes(i)?'on':''}" onclick="pc(${i})">${c[0]}</button>`).join('');
+let v=(tsel>=0?TE[tsel][1]:0)+csel.reduce((a,i)=>a+CH[i][1],0);v=Math.max(0,Math.min(100,v));const m=$('#mt');m.style.width=v+'%';m.style.background=v>=70?'#0f7b6c':v>=40?'#e0a526':'#d9534f';$('#mv').textContent=v+'%';$('#mj').textContent=v>=70?'Kuat: logis, berbukti, santun. 🌟':v>=40?'Cukup. Tambah data atau dalil.':'Lemah. Perkuat dengan bukti, buang serangan pribadi.';
+$('#prev').textContent=(tsel>=0?TE[tsel][0]+' ':'')+csel.map(i=>CH[i][2]).join(' ')+(v>=70?' Oleh karena itu, tabayyun adalah sikap cerdas sekaligus akhlak mulia.':'');return v}
+function pt(i){tsel=i;TE[i][1]>0?S.ok():S.bad();rsim()}function pc(i){const k=csel.indexOf(i);k>=0?csel.splice(k,1):csel.push(i);CH[i][1]>0?S.ok():S.bad();if(rsim()>=70)S.win()}function resetSim(){tsel=-1;csel=[];S.click();rsim()}rsim();
+// LKPD
+const Q=[['Kalimat yang berisi pandangan pribadi penulis disebut ...',['Fakta','Opini','Data'],1],['Bagian awal teks argumentasi yang memuat pendirian penulis adalah ...',['Tesis','Penegasan ulang','Ilustrasi'],0],['Kata penanda opini yang tepat adalah ...',['tercatat','menurut saya','pada tahun 2020'],1],['Konjungsi yang menyatakan sebab-akibat adalah ...',['oleh karena itu','misalnya','sedangkan'],0],['Tabayyun berarti ...',['menyebarkan kabar secepatnya','memeriksa kebenaran informasi','mengabaikan berita'],1]];
+$('#qs').innerHTML=Q.map((q,i)=>`<div class="q"><b>${i+1}. ${q[0]}</b>${q[1].map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}"> ${String.fromCharCode(97+j)}. ${o}</label>`).join('')}</div>`).join('');
+function cek(){let s=0;Q.forEach((q,i)=>{const r=document.querySelector(`input[name=q${i}]:checked`);if(r&&+r.value==q[2])s++});$('#sk').textContent=`Skor: ${s*20}/100 ${s>=4?'🎉':'Coba lagi'}`;s>=4?S.win():S.bad()}
+function resetLk(){document.querySelectorAll('#p3 input[type=radio]').forEach(r=>r.checked=false);$('#es').value='';$('#sk').textContent='';wc();S.click()}
+function wc(){const n=$('#es').value.trim().split(/\s+/).filter(x=>x).length;$('#wc').textContent=n+' kata'+(n>=60?' ✔ cukup':' (target ±60 kata)')}wc();
+// Game
+const G=[['Indonesia memiliki penduduk muslim terbanyak di dunia.','F'],['Puasa Ramadan adalah ibadah paling indah.','O'],['Zakat fitrah wajib ditunaikan sebelum salat Idulfitri.','F'],['Sebaiknya semua siswa menghafal juz 30.','O'],['Ka’bah terletak di Makkah.','F'],['Media sosial pasti merusak akhlak remaja.','O'],['Salat wajib dalam Islam berjumlah lima waktu.','F'],['Menurut saya, hoaks lebih berbahaya daripada kebohongan biasa.','O'],['Bulan Ramadan berlangsung 29 atau 30 hari.','F'],['Bahasa Indonesia paling mudah dipelajari.','O']];
+let gi,gs,gl,gk,gt,gtm,go=false,ord;function shuf(){ord=G.map((_,i)=>i).sort(()=>Math.random()-.5)}
+function upd(){$('#gs').textContent=gs;$('#gl').textContent='❤'.repeat(Math.max(gl,0))||'—';$('#gk').textContent=gk}
+function nq(){if(gi>=ord.length||gl<=0)return endG();gt=15;$('#gt').textContent=gt;$('#gq').textContent=G[ord[gi]][0]}
+function startG(){shuf();gi=0;gs=0;gl=3;gk=0;go=true;$('#gf').textContent='';S.click();upd();clearInterval(gtm);gtm=setInterval(()=>{if(!go)return;gt--;$('#gt').textContent=gt;if(gt<=0){gl--;gk=0;S.bad();gi++;upd();$('#gf').textContent='⏰ Waktu habis!';nq()}},1000);nq()}
+function ans(a){if(!go)return;const c=G[ord[gi]][1]==a;if(c){gk++;gs+=10+gk*2;S.ok();$('#gf').textContent='Benar! '+(a=='F'?'Dapat dibuktikan.':'Mengandung penilaian pribadi.')}else{gl--;gk=0;S.bad();$('#gf').textContent='Kurang tepat. '+(G[ord[gi]][1]=='F'?'Ini fakta yang dapat diperiksa.':'Ini opini karena bernada penilaian.')}gi++;upd();nq()}
+function endG(){go=false;clearInterval(gtm);$('#gq').textContent=(gl>0?'Selesai! ':'Game over. ')+'Skor akhir: '+gs;gl>0?S.win():S.bad()}
+function resetG(){go=false;clearInterval(gtm);gs=0;gl=3;gk=0;upd();$('#gq').textContent='Tekan Mulai';$('#gt').textContent=15;$('#gf').textContent='';S.click()}
+resetG();
+function dl(){S.ok();const b=new Blob(['<!DOCTYPE html>'+document.documentElement.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='Labmaya-OpiniQ.html';document.body.appendChild(a);a.click();a.remove()}
+</script></body></html>
